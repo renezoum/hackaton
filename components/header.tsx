@@ -27,9 +27,9 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="p-2 rounded-full hover:bg-gray-100 transition duration-200">
+            <button className="p-2 rounded-full hover:bg-green-100 transition duration-200">
               <svg
-                className="w-5 h-5 text-gray-600"
+                className="w-5 h-5 text-green-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
