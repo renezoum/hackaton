@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -12,11 +13,13 @@ export default function Footer() {
           {/* Left Section - Logo & Description */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-green-700">G</span>
-              <div className="flex flex-col leading-tight">
-                <span className="text-xs font-bold text-green-700">GUINEA</span>
-                <span className="text-[10px] text-gray-500 font-medium">SMART ELECTRICITY</span>
-              </div>
+              <Image
+                src="/guineaSmart.jpg"
+                alt="Guinea Smart Electricity Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <p className="text-sm text-gray-600">
               L'innovation IA au service de la relation client EDG en Guinée
