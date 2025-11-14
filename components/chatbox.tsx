@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useChatBox } from '@/context/ChatBoxContext'
 
 interface Message {
   id: number
@@ -10,7 +11,7 @@ interface Message {
 }
 
 export default function ChatBox() {
-  const [isOpen, setIsOpen] = useState(false)
+  const { isOpen, closeChatBox, openChatBox } = useChatBox()
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -72,7 +73,7 @@ export default function ChatBox() {
       {/* Floating Chat Button - Only show when chatbox is closed */}
       {!isOpen && (
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={openChatBox}
           className="fixed bottom-6 right-6 w-15 h-15 rounded-full shadow-2xl flex items-center justify-center text-4xl hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-40"
           style={{
             background: 'linear-gradient(135deg, #ff9a56 0%, #ffd56f 50%, #56d896 100%)'
@@ -97,7 +98,7 @@ export default function ChatBox() {
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={closeChatBox}
               className="text-white hover:text-gray-200 text-2xl transition-colors"
             >
               ✕

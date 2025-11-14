@@ -51,18 +51,18 @@ export default function Carousel() {
             <div className="w-full max-w-2xl space-y-4 md:space-y-0 md:flex gap-6 pt-4 md:pt-8">
             {/* Primary Button - Light gray */}
             <Link
-                href="/client"
+                href="/pme_space"
             >
-                <button className="w-full md:flex-1 px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-green-500  text-white font-light  text-center my-2">
+                <button className="w-full md:flex-1 px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-green-500  text-white font-light  text-center my-2 cursor-pointer hover:bg-green-600 transition">
                     Espace client EDG (Citoyen / PME)
                 </button>
             </Link>
 
             {/* Secondary Button - Border white */}
             <Link
-                href="/team"  
+                href="/manager_dash"  
                 >
-                <button className="w-full md:flex-1 px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-transparent border-1 border-gray-300 hover:bg-white/10 text-white font-light text-center my-2">
+                <button className="w-full md:flex-1 px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-transparent border-1 border-gray-300 hover:bg-white/10 text-white font-light text-center my-2 cursor-pointer">
                 Espace EDG (Technicien / Manager)
                 </button>
             </Link>

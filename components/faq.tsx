@@ -1,10 +1,12 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
+import { useChatBox } from '@/context/ChatBoxContext'
 
 export default function FAQ() {
   const [openItems, setOpenItems] = useState<number[]>([])
   const [searchQuery, setSearchQuery] = useState('')
+  const { openChatBox } = useChatBox()
 
   const toggleItem = (id: number) => {
     setOpenItems((prev) =>
@@ -252,9 +254,12 @@ export default function FAQ() {
                     {openItems.includes(item.id) && (
                       <div className="px-6 py-5 bg-gray-50 border-t-2 border-gray-100 text-gray-700 leading-relaxed space-y-4">
                         <p>{item.answer}</p>
-                        <a href="#" className="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 transition-colors">
+                        <button 
+                          onClick={openChatBox}
+                          className="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 transition-colors"
+                        >
                           <span>📱</span> Demander plus d'infos à EVA
-                        </a>
+                        </button>
                       </div>
                     )}
                   </div>
